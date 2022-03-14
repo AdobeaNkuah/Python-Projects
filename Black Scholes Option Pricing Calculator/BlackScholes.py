@@ -24,13 +24,19 @@ t = 0  # t = 0.5
 μ = 0  # μ = 0
 σ = 0  # σ = 0.3
 
+# test values
+# S = 100
+# K = 100
+# r = 0.05
+# t = 0.5
+# μ = 0
+# σ = 0.3
 
 # Prompt user to enter variable values
 # Error handling for input data
 while type(S) is not float:
     try:
         S = float(input("Type stock price, S:  "))  # test entered value using typecast to ensure it's a number
-        print(S)
     except ValueError:
         print("Value error, entered value must be a number")
 
@@ -75,22 +81,20 @@ def d1(S, K, r, σ, t):
     return numerator / denominator
 
 
-def d2(d1, t, σ):
-    return d1 - σ*math.sqrt(t)
+def d2(S, K, r, σ, t):
+    return d1(S, K, r, σ, t) - σ*math.sqrt(t)
 
 
-def call_price(S, K, r, μ, σ, t, PV,  d1, d2):
-    C = S*N(d1, μ, σ) - PV(K, r, t)*N(d2, μ, σ)
+def call_price(S, K, r, μ, σ, t):
+    C = S*N(d1(S, K, r, σ, t), μ, σ) - PV(K, r, t)*N(d2(S, K, r, σ, t), μ, σ)
     return C
 
 
-def put_price(S, K, r, μ, σ, t, PV,  d1, d2):
-    P = PV(K, r, t)*N(-d2, μ, σ) - S*N(-d1, μ, σ)
+def put_price(S, K, r, μ, σ, t):
+    P = PV(K, r, t)*N(-d2(S, K, r, σ, t), μ, σ) - S*N(-d1(S, K, r, σ, t), μ, σ)
     return P
 
+# Display calculated Call and Put price in terminal
+print("Call Price: " + str(call_price(S, K, r, μ, σ, t)))
+print("Put Price: " + str(put_price(S, K, r, μ, σ, t)))
 
-print("Call Price: " + call_price(S, K, r, μ, σ, t, PV, d1, d2))
-print("Put Price: " + put_price(S, K, r, μ, σ, t, PV,  d1, d2))
-
-
-# def main():
