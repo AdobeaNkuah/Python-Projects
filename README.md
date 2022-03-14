@@ -11,7 +11,7 @@ The Black Scholes formula for European Call Options is defined as follows:
 
 Where:
 - N(x) is the cumulative distribution function of the standard normal distribution (the probability that a value less than (d) occurs)
-- T – t is the time to maturity expressed as a fraction of the year
+- t is the time to maturity expressed as a fraction of the year
 - S is the spot price of the underlying asset
 - K is the strike price
 - r is the risk-free interest rate (annual rate, expressed in terms of continuous compounding)
