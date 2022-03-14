@@ -3,7 +3,7 @@
 This python project can be used to determine the ideal pricing for a european call/put of an stock option through the Black-Scholes model.
 
 ### Black Scholes Formula ###
-The Black and Scholes formula for European Call Options is defined as follows:
+The Black Scholes formula for European Call Options is defined as follows:
 <br>
 ![chapter9-8b1](https://user-images.githubusercontent.com/48498666/158127746-1463646d-a923-4f30-b0fe-b7af53b6f913.jpg)
 <br>
