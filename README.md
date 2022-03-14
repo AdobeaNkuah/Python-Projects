@@ -1,6 +1,6 @@
 # Python Projects
 ## Black Scholes Option Pricing Calculator ##
-This python project can be used to determine the ideal pricing for a european call/put of an stock option through the Black-Scholes model.
+This python project can be used to determine the ideal pricing for a european call/put of a stock option through the Black-Scholes model.
 
 ### Black Scholes Formula ###
 The Black Scholes formula for European Call Options is defined as follows:
